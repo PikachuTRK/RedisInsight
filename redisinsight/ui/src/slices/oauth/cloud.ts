@@ -355,7 +355,7 @@ export function fetchUserInfo(
     try {
       const params = getCloudSsoUtmParams(getState().oauth?.cloud?.source)
 
-      console.log('params', params)
+      console.log('params', params.get('campaign'))
 
       const { data, status } = await apiService.get<CloudUser>(
         ApiEndpoints.CLOUD_ME,
