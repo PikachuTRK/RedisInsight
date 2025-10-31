@@ -90,6 +90,7 @@ export const INFINITE_MESSAGES: Record<
     return {
       id: InfiniteMessagesIds.oAuthSuccess,
       message: 'Congratulations!',
+      variant: 'success',
       description: (
         <>
           {text}
@@ -143,8 +144,9 @@ export const INFINITE_MESSAGES: Record<
             <FlexItem>
               <ExternalLink
                 href={MANAGE_DB_LINK}
-                iconSize="XS"
+                iconSize="S"
                 variant="inline"
+                style={{ display: 'inline-flex' }}
               >
                 Manage DB
               </ExternalLink>
@@ -207,8 +209,7 @@ export const INFINITE_MESSAGES: Record<
   }),
   SUBSCRIPTION_EXISTS: (onSuccess?: () => void, onClose?: () => void) => ({
     id: InfiniteMessagesIds.subscriptionExists,
-    message:
-      'Your subscription does not have a free Redis Cloud database.',
+    message: 'Your subscription does not have a free Redis Cloud database.',
     description:
       'Do you want to create a free database in your existing subscription?',
     actions: {
