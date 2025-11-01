@@ -1,5 +1,4 @@
-name: 🚀 Manual build - Enterprise
-
+name: Manual build - Enterprise
 on:
   # Manual trigger build
   # No multi-select
