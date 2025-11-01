@@ -6,26 +6,6 @@ on:
   # https://github.com/actions/runner/issues/2076
   workflow_dispatch:
     inputs:
-      build_docker:
-        description: Build Docker
-        type: boolean
-        required: false
-
-      build_windows_x64:
-        description: Build Windows x64
-        type: boolean
-        required: false
-
-      build_macos_x64:
-        description: Build macOS x64
-        type: boolean
-        required: false
-
-      build_macos_arm64:
-        description: Build macOS arm64
-        type: boolean
-        required: false
-
       build_linux_appimage_x64:
         description: Build Linux AppImage x64
         type: boolean

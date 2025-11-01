@@ -6,26 +6,6 @@ on:
   # https://github.com/actions/runner/issues/2076
   workflow_dispatch:
     inputs:
-      build_docker:
-        description: Build Docker
-        type: boolean
-        required: false
-
-      build_windows_x64:
-        description: Build Windows x64
-        type: boolean
-        required: false
-
-      build_macos_x64:
-        description: Build macOS x64
-        type: boolean
-        required: false
-
-      build_macos_arm64:
-        description: Build macOS arm64
-        type: boolean
-        required: false
-
       build_linux_appimage_x64:
         description: Build Linux AppImage x64
         type: boolean
@@ -33,11 +13,6 @@ on:
 
       build_linux_deb_x64:
         description: Build Linux deb x64
-        type: boolean
-        required: false
-
-      build_linux_rpm_x64:
-        description: Build Linux rpm x64
         type: boolean
         required: false
 
@@ -82,14 +57,6 @@ jobs:
       environment: ${{ inputs.environment }}
       enterprise: true
 
-  aws-upload:
-    uses: ./.github/workflows/aws-upload-enterprise.yml
-    secrets: inherit
-    needs: [manual-build]
-    if: always()
-    with:
-      environment: ${{ inputs.environment }}
-
   clean:
     uses: ./.github/workflows/clean-deployments.yml
     # secrets: inherit
@@ -107,3 +74,4 @@ jobs:
       - uses: actions/checkout@v4
       - name: Remove all artifacts
         uses: ./.github/actions/remove-artifacts
+
